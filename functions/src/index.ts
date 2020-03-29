@@ -35,7 +35,7 @@ app.get('/posts', async (req, res) => {
 
         const users: UserInfoModel[] = [];
 
-        await userQuerySnapshot.forEach((doc: any) => users.push(doc.data()));
+        userQuerySnapshot.forEach((doc: any) => users.push(doc.data()));
 
         // get all posts
         const postQuerySnapshot = await db.collection(postsCollection).get();
@@ -52,7 +52,7 @@ app.get('/posts', async (req, res) => {
             return {...args };
         };
 
-        await postQuerySnapshot.forEach((doc: any) => {
+        postQuerySnapshot.forEach((doc: any) => {
             const post: PostModel = doc.data();
 
             if (post.state !== 'PUBLISHED') {
