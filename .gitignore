@@ -1,3 +1,5 @@
 /functions/lib/
 /functions/src/serviceAccountKey.json
 /functions/node_modules/
+/functions/ui-debug.log
+/.idea
